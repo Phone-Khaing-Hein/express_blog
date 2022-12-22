@@ -1,0 +1,27 @@
+<html lang="en">
+<%- include("../components/header") %>
+
+    <body>
+        <%- include("../components/nav.ejs") %>
+
+            <div class="container mt-5">
+                <h3>Edit Blog</h3>
+                <form action="/blogs/update/<%= blog._id %>" method="post">
+                    <div class="mb-2">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Enter Title"
+                            value="<%= blog.title  %>">
+                    </div>
+                    <div class="mb-2">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" rows="10" id="description" class="form-control"
+                            placeholder="Enter Description"><%= blog.description %></textarea>
+                    </div>
+                    <button class="btn btn-dark float float-end">Update Blog</button>
+                </form>
+            </div>
+
+            <%- include("../components/footer.ejs") %>
+    </body>
+
+</html>
